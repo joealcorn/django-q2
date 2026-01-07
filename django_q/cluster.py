@@ -330,9 +330,9 @@ class Sentinel:
             # Check Pusher
             if not self.pusher.is_alive():
                 self.reincarnate(self.pusher)
-            # Call scheduler once a minute (or so)
+            # Call scheduler at configured interval
             counter += cycle
-            if counter >= 30 and Conf.SCHEDULER:
+            if counter >= Conf.SCHEDULER_INTERVAL and Conf.SCHEDULER:
                 counter = 0
                 scheduler(broker=self.broker)
             # Save current status

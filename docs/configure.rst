@@ -408,6 +408,12 @@ scheduler
 You can disable the scheduler by setting this option to ``False``. This will reduce a little overhead if you're not using schedules, but is most useful if you want to temporarily disable all schedules.
 Defaults to ``True``
 
+scheduler_interval
+~~~~~~~~~~~~~~~~~~
+Sets how often (in seconds) the cluster checks for scheduled tasks that are due to run.
+Higher values reduce database queries but delay scheduled task execution.
+Defaults to ``30`` seconds.
+
 .. _error_reporter:
 
 error_reporter

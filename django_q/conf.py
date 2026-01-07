@@ -131,6 +131,9 @@ class Conf:
     # Disable the scheduler
     SCHEDULER = conf.get("scheduler", True)
 
+    # Scheduler polling interval in seconds
+    SCHEDULER_INTERVAL = conf.get("scheduler_interval", 30)
+
     # Number of workers in the pool. Default is cpu count if implemented, otherwise 4.
     WORKERS = conf.get("workers", False)
     if not WORKERS:
