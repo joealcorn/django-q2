@@ -310,7 +310,7 @@ class Sentinel:
                 + f" [{self.queue_name()}]"
             }
         )
-        counter = 0
+        counter = Conf.SCHEDULER_INTERVAL  # Start at interval to run scheduler immediately
         cycle = Conf.GUARD_CYCLE  # guard loop sleep in seconds
         # Guard loop. Runs at least once
         while not self.stop_event.is_set() or not counter:
